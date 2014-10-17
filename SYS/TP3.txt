@@ -1,9 +1,9 @@
 Fiche réponse TD3
 
 --- Exercice 1 ---
-1. 
-	Nom de l'OS : lsb_release -d 	
-	Version de linux : uname -o	
+1.
+	Nom de l'OS : lsb_release -d
+	Version de linux : uname -o
 	Version du noyau : uname -mrs
 2. hostname
 3. echo $USER # ou whoami
@@ -19,7 +19,7 @@ Fiche réponse TD3
 5. ls -l fichier.txt
 6. sudo adduser toto
 7. sudo chown toto fichier.txt # Le root est nécessaire pour changer le propriétaire d'un fichier
-8. 
+8.
 	sudo chgrp toto fichier.txt
 	sudo chown toto:toto fichier.txt
 9. touch master.txt; sudo chown toto:toto master.txt

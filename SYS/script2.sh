@@ -8,12 +8,12 @@
 filename=$1
 printname="Le fichier $filename"
 
-if [ -e $filename ]; then 
+if [ -e $filename ]; then
     echo "$printname existe"
-    if [ -r $filename ]; then 
+    if [ -r $filename ]; then
         echo "$printname a la permission de lecture"
     fi
-    
+
     if [ -w $filename ]; then
         echo "$printname a la permission de modification"
     fi

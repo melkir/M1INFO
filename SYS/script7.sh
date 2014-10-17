@@ -9,8 +9,8 @@ function Usage {
 }
 
 # Verification des arguments
-if [ $# != 2 ]; then 
-	Usage 
+if [ $# != 2 ]; then
+	Usage
 fi
 
 if [ ! -e $1 ]; then
