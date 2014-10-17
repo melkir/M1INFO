@@ -19,7 +19,7 @@ x[x > 2 & x < 3]
 
 # --- Exercice 4 ---
 Y = matrix(
-	data = c(1,6,5,0,0,6,6,1,3,0,2,2,4,4,3,4), 
+	data = c(1,6,5,0,0,6,6,1,3,0,2,2,4,4,3,4),
 	nrow=4,
 	ncol=4,
 	byrow = TRUE)
@@ -27,14 +27,14 @@ Y = matrix(
 # colnames(Y) = paste("column ", 1:4)
 # dimnames(Y) = paste("row", 1:4, sep="=")
 dimnames(Y) <- list(
-	rownames(Y, do.NULL = FALSE, prefix = "row-"), 
+	rownames(Y, do.NULL = FALSE, prefix = "row-"),
 	colnames(Y, do.NULL = FALSE, prefix = "column ")
 )
 det(Y) # Calcul du determinant de la matrice
 solve(Y) # Inverse de la matrice
 
 # --- Exercice 5 ---
-apply(Orange[2:3], 2, mean) # colMeans(Orange[2:3]) 
+apply(Orange[2:3], 2, mean) # colMeans(Orange[2:3])
 apply(Orange[2:3], 2, sd)
 apply(Orange[2:3], 2, min)
 apply(Orange[2:3], 2, quantile)
@@ -52,9 +52,33 @@ new.taille<-c(rep(taille1, 2), taille[3:9])
 write.csv(new.taille, file="output.csv")
 
 # --- Exercice 8 ---
+new.iris<-iris[iris$Species == "versicolor",]
+new.iris[order(new.iris$Sepal.Length,decreasing=TRUE),]
 
 # --- Exercice 9 ---
+A<-matrix(
+	data=c("8","9","16","2"),
+	nrow=2,
+	ncol=2)
+A<-apply(A, 2, as.numeric)
 
 # --- Exercice 10 ---
+personne<-data.frame(
+	taille=c(160,180,175),
+	poids=c(52,96,60),
+	age=c(18,43,29),
+	c.yeux=c("vert", "bleu", "bleu"))
+names(personne)[3] <- "new.age"
+rownames(personne)[2] <- "Marie"
+rownames(personne) <- NULL
+names(personne) <- letters[1:4]
+personne[1,3]
+personne[2,];
+as.vector(as.matrix(personne[2,])) # c(t(personne[2,]))
+personne[3, c(1,3)]
+personne[personne$a > 160 & personne$a < 180, 1]
+personne[personne$a > 170, 2]
+which(personne$b > 52)
+personne$a[1:2] = c(190,158)
 
 # --- Exercice 11 ---
