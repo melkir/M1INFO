@@ -1,0 +1,71 @@
+Fiche réponse TD3
+
+--- Exercice 1 ---
+1. 
+	Nom de l'OS : lsb_release -d 	
+	Version de linux : uname -o	
+	Version du noyau : uname -mrs
+2. hostname
+3. echo $USER # ou whoami
+4. cal 1 2018
+5. date +%d%m%Y
+6. pwd
+
+--- Exercice 2 ---
+1. mkdir TP3
+2. mkdir TP3/TEST
+3. cd TP3
+4. touch fichier.txt # on suppose être déjà dans le dossier TP3 avec l'étape 3
+5. ls -l fichier.txt
+6. sudo adduser toto
+7. sudo chown toto fichier.txt # Le root est nécessaire pour changer le propriétaire d'un fichier
+8. 
+	sudo chgrp toto fichier.txt
+	sudo chown toto:toto fichier.txt
+9. touch master.txt; sudo chown toto:toto master.txt
+10. umask # résultat : 022, ce masque exlut les permissions d'écriture pour le groupe (g) et les autres (o)
+11. umask a=rw
+12. netstat -ant > tcp.txt; ls -l tcp.txt # résultat : -rw-rw-rw-
+13. rmdir TEST
+14. cd ..; rmdir TP3 # "Impossible(...) le dossier n'est pas vide."
+15. Il n'est pas possible de supprimer le dossier car celui-ci n'est pas vide.
+16. rm -r TP3
+17. mkdir -p ~/TP3/TEST/Configuration
+18. cd TP3/TEST/Configuration; touch file1.txt file2.txt
+19.
+	>  Redirige la sortie vers un fichier, créer le fichier s'il n'est pas présent sinon il l'écrase.
+	>> Redirige la sortie vers un fichier, créer le fichier s'il n'est pas présent sinon il ajoute le flux à la fin du fichier.
+	;  Exécuter plusieurs commande sur la même ligne. L'équivalent de <Enter> entre chaque commandes.
+20.
+	cat file1.txt # -> concaténation de 2 chaines de caractères avec ">>"
+	cat file2.txt # -> la première chaine de caractère a été écrasé avec ">"
+21. echo "bizzare (...) ?" > \.file3.txt
+22. cp file1.txt file4.txt
+23. ln -s file4.txt ~/Bureau/file4.txt
+24. mv file4.txt fichier4.txt
+25. mv .file3.txt file3.txt
+26. cmp file1.txt fichier4.txt
+27. cmp file1.txt fichier4.txt # -> cmp: EOF on file1.txt
+28. cp -R ../Configuration ~/Bureau/
+29. rm -rf *
+30. cd ~; rm -rf ~/TP3
+31. whoami; su # ou sudo bash
+32. touch ~/abc.txt
+33. exit; whoami
+34. Non car le fichier est en lecture seule pour "other", il faudrait que je sois le propriétaire du fichier pour avoir accès au fichier en écriture.
+35. rm ~/abc.txt
+
+--- Exercice 3 ---
+1. echo "Bonjour et bienvenue $USER"
+2. read var
+3. export var
+4. echo $((2*3))
+5. var = $(ls -l)
+6.
+	reboot
+	shutdown -r now
+	init 6 # ou systemctl reboot
+7.
+	halt -p
+	shutdown -h now
+	init 8 # ou systemctl shutdown

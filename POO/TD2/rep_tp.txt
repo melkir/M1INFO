@@ -1,0 +1,1 @@
+Q1: Non, car le constructeur par défaut ne prend pas de paramètre lors de la création.

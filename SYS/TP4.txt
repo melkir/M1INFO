@@ -1,0 +1,17 @@
+Fiche réponse TD4
+
+--- Exercice 1 ---
+
+chmod +x script1.sh
+./script1.sh
+
+Ce script affiche les résultats des commandes suivantes :
+ls -la 	- long listing format with hidden files
+pwd 	- print name of current/working directory
+whoami 	- print effective userid
+date 	- print the system date and time
+
+--- Exercice 3 ---
+Ce script affiche un menu à 4 choix permettant d'exécuter les commandes suivantes date, who, pwd et ls. Il affiche un message si le choix de l'utilisateur est incorrect.
+
+
