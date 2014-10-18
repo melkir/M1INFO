@@ -30,7 +30,7 @@ dimnames(Y) <- list(
 	rownames(Y, do.NULL = FALSE, prefix = "row-"),
 	colnames(Y, do.NULL = FALSE, prefix = "column ")
 )
-det(Y) # Calcul du determinant de la matrice
+det(Y) # Calcul du déterminant de la matrice
 solve(Y) # Inverse de la matrice
 
 # --- Exercice 5 ---
@@ -49,7 +49,8 @@ w<-rep(c(4,9,2),c(7,5,3))
 taille<-c(178,175,160,191,176,155,163,174,182)
 taille1<-c(164,172,156,195,166)
 new.taille<-c(rep(taille1, 2), taille[3:9])
-write.csv(new.taille, file="output.csv")
+# ligne commenté pour éviter de créer un fichier a chaque utilisation de source()
+#write.csv(new.taille, file="output.csv")
 
 # --- Exercice 8 ---
 new.iris<-iris[iris$Species == "versicolor",]
@@ -68,10 +69,10 @@ personne<-data.frame(
 	poids=c(52,96,60),
 	age=c(18,43,29),
 	c.yeux=c("vert", "bleu", "bleu"))
-names(personne)[3] <- "new.age"
-rownames(personne)[2] <- "Marie"
-rownames(personne) <- NULL
-names(personne) <- letters[1:4]
+names(personne)[3]<-"new.age"
+rownames(personne)[2]<-"Marie"
+rownames(personne)<-NULL
+names(personne) <-letters[1:4]
 personne[1,3]
 personne[2,];
 as.vector(as.matrix(personne[2,])) # c(t(personne[2,]))
@@ -82,3 +83,20 @@ which(personne$b > 52)
 personne$a[1:2] = c(190,158)
 
 # --- Exercice 11 ---
+# On redefini personne dans son etat initial
+personne<-data.frame(
+	taille=c(160,180,175),
+	poids=c(52,96,60),
+	age=c(18,43,29),
+	c.yeux=c("vert", "bleu", "bleu"))
+
+ma_liste<-list(5,
+	c(t(personne$taille)),
+	matrix(c(1:12), nrow=4, ncol=3),
+	personne)
+names(ma_liste) = c("nombre", "taille", "liste_nb", "personne")
+
+ma_liste$taille # ma_liste[[2]] - is.vector TRUE
+ma_liste[2] # is.list TRUE
+ma_liste[c(1,3)]
+ma_liste$personne[3,2] # ma_liste[[4]][3,2]
