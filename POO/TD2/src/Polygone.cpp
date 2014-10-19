@@ -9,7 +9,7 @@ Polygone::Polygone() {
     int nbPoints;
     cin >> nbPoints;
     cout << "++ Saisie des coordonnees des " << nbPoints << " points" << endl;
-    int x, y;
+    int x, y = 0;
     for (int i = 0; i < nbPoints; ++i) {
         cout << "Point n°" << i << " : \n";
         cin >> x >> y;

@@ -44,7 +44,7 @@ void Point::setY(float y) {
 }
 
 int Point::getNbPts() const {
-    return nbPts;
+    return Point::nbPts;
 }
 
 int Point::distance(const Point &other) {
