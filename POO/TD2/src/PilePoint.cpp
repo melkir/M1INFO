@@ -8,7 +8,9 @@ PilePoint::PilePoint()
 }
 
 PilePoint::PilePoint(const PilePoint &p)
-        : m_size(0), m_capacity(p.m_capacity), m_storage(new Point[m_capacity]) {
+        : m_storage(new Point[m_capacity]),
+          m_size(p.m_size),
+          m_capacity(p.m_capacity) {
     copy(p.m_storage, p.m_storage + m_size, m_storage);
 }
 

@@ -56,10 +56,9 @@ float Point::distance(const Point &p1, const Point &p2) {
 }
 
 Point::~Point() {
-//    cout << "Destruction du point " << *this << endl;
 }
 
-ostream& operator<< (ostream &os, const Point &p) {
+ostream &operator<<(ostream &os, const Point &p) {
     os << '(' << p.getX() << ',' << p.getY() << ')';
     return os;
 }

@@ -25,14 +25,13 @@ Polygone::Polygone(const Polygone &p) : m_pilePoint(PilePoint()) {
 }
 
 Polygone::~Polygone() {
-    // TODO
 }
 
 
-Polygone& Polygone::operator=(const Polygone& p) {
-	Polygone temp(p);
-	swap(*this, temp);
-	return *this;
+Polygone &Polygone::operator=(const Polygone &p) {
+    Polygone temp(p);
+    swap(*this, temp);
+    return *this;
 }
 
 Polygone::Polygone(PilePoint pilePoint) : m_pilePoint(pilePoint) {

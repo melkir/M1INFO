@@ -46,8 +46,16 @@ namespace {
 
     void launch_pilePoint() {
         PilePoint a(3);
-        a.empile(Point(2,3));
-
+        a.empile(Point(3, 3));
+        a.empile(Point(12, 3));
+        a.affiche();
+        PilePoint b(a);
+        b.affiche();
+        Point nb;
+        a > nb;
+        nb.affiche();
+        a.affiche();
+        b.affiche();
     }
 
     void launch_point() {
@@ -60,16 +68,8 @@ namespace {
     }
 
     void launch_polygone() {
-        //TODO
-        PilePoint pile = PilePoint();
-        pile.empile(Point(0,0));
-        pile.empile(Point(1,1));
-        // Problème avec la recopie d'une pile de point = et &
-        PilePoint pile2(pile);
-        pile.affiche();
-        pile2.affiche();
-        Polygone p(pile);
-        p.affiche();
+        Polygone p;
+        Polygone p1;
     }
 }
 
@@ -77,6 +77,7 @@ int main() {
 //    launch_peluche();
 //    launch_pileEntier();
 //    launch_point();
+//    launch_pilePoint();
     launch_polygone();
     return 0;
 }
