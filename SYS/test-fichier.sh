@@ -14,3 +14,6 @@ if [ ! -e $1 ]; then
     echo "$1 n\'est pas un fichier ou n\'existe pas"
     exit 1
 fi
+
+# Version simplifié de l'exercice
+stat "$1"
