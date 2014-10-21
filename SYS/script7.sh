@@ -13,9 +13,9 @@ if [ $# != 2 ]; then
 	Usage
 fi
 
-if [ ! -e $1 ]; then
+if [ ! -e "$1" ]; then
     echo "Source file $1 not found" 1>&2
 fi
 
 # Copie du contenu du fichier source dans le fichier destination
-echo $(cat $1) > $2
+echo $(cat "$1") > "$2"

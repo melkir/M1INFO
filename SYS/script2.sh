@@ -5,7 +5,7 @@
 # - Le fichier XYZ a la permission de lecture
 # - Le fichier XYZ a la permission de modification
 
-filename=$1
+filename="$1"
 printname="Le fichier $filename"
 
 if [ -e $filename ]; then
