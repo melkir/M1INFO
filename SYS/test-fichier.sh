@@ -14,13 +14,3 @@ if [ ! -e $1 ]; then
     echo "$1 n\'est pas un fichier ou n\'existe pas"
     exit 1
 fi
-
-echo "Le fichier $1 est un "
-case $1 in
-	[-f $1])
-		echo "fichier ordinaire"
-		;;
-	[-d $1])
-		echo "repertoire"
-		;;
-esac
