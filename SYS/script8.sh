@@ -22,10 +22,10 @@ echo
 # Description des actions du menu
 case "$answer" in
 1)
-	tar -zcf compressed.tar.gz $@
+	tar -zcf compressed.tar.gz "$*"
 	;;
 2)
-	tar -jcf compressed.tar.bz2 $@
+	tar -jcf compressed.tar.bz2 "$*"
 	;;
 3)
 	exit
