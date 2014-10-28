@@ -19,8 +19,3 @@ fi
 #echo $(ls -l "$1" | tr " " ";" | cut -f 5 -d ";")
 # Without tr command
 echo $(ls -l "$1" | cut -f 5 -d " ")
-
-
-
-
-
