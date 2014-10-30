@@ -3,7 +3,7 @@
 
 # Fonction d'affichage de l'aide pour l'utilisation du script
 function Usage {
-    echo "Usage: $0 <file>" 1>&2
+    echo "Usage : $0 <file>" 1>&2
     exit 1
 }
 
