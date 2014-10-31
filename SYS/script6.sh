@@ -14,4 +14,3 @@ if [ ! -e "$1" ]; then
 fi
 
 echo $(cut -d : -f 1,7 "$1" | grep $USER)
-
