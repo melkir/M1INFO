@@ -16,4 +16,3 @@ fi
 # echo $(cat $1 | grep $USER | cut -d : -f 1,7)
 # passwd ne contenant pas de login de l'utilisateur courant, j'ai choisi de prendre etu
 echo $(cat "$1" | grep etu | cut -d : -f 1,7)
-

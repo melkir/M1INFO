@@ -13,5 +13,3 @@ date 	- print the system date and time
 
 --- Exercice 3 ---
 Ce script affiche un menu à 4 choix permettant d'exécuter les commandes suivantes date, who, pwd et ls. Il affiche un message si le choix de l'utilisateur est incorrect.
-
-

@@ -15,7 +15,7 @@ deb=${1:-1}
 fin=${2:-30}
 inc=${3:-1}
 
-for (( i = deb; i < fin; i+=inc )); 
+for (( i = deb; i < fin; i+=inc ));
 	do echo "X+${i}I"
 done
 echo "Y"
