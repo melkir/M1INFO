@@ -1,7 +1,7 @@
 #!/bin/sh
 # taille.sh
 
-for file in ./*
+for file in *
 do
     echo "$file" $(stat -c%s "$file")
 done

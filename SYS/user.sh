@@ -11,7 +11,7 @@ function Usage {
 if (( $# != 1 )); then Usage; fi
 
 # Recupère uniquement les premiers champs contenant $1
-cat "/etc/passwd" | cut -d : -f 1 | grep "$1"
+cut -d: -f1 /etc/passwd | grep "$1" > /dev/null
 # On teste le resultat de la commande
 if (($? == true)); then
 	echo $(cat /etc/passwd | grep "$1")
