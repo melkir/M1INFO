@@ -8,7 +8,5 @@
 [ $1 -eq 0 ] && { echo 1; exit 0; }
 
 res=0
-for i in `seq 1 $1`; do
-	((res += i))
-done
+for i in `seq 1 $1`; do ((res += i)); done
 echo "fact($1) = $res"

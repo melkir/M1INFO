@@ -9,9 +9,7 @@ Usage(){
 if (( $# == 0 )); then Usage; fi
 
 som=0
-for i in $*; do
-	((som+=$i))
-done
+for i in $*; do ((som+=$i)); done
 
 echo "Somme : " $som
 echo "Valeur moyenne :" $(( $som/$# ))
