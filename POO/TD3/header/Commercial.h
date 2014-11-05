@@ -3,8 +3,6 @@
 
 #include "Employe.h"
 
-using namespace std;
-
 class Commercial : public Employe {
 public:
     Commercial();
@@ -15,27 +13,13 @@ public:
 
     virtual double calculer_base_salaire();
 
+    double getChiffreAffaire() const;
+
+    void setChiffreAffaire(double chiffre_affaire);
+
+    static constexpr double m_BASE = 10.0, m_PART = 10.0;
 private:
     double m_chiffre_affaire;
-    static const double m_BASE = 250, m_PART = 10;
 };
 
 #endif
-
-Commercial::Commercial() : Employe() {
-    cout << "Creation de l'objet Commercial" << endl;
-}
-
-Commercial::~Commercial() {
-    cout << "Destruction de l'objet Commercial" << endl;
-}
-
-void Commercial::affiche() const {
-    Employe::affiche();
-    cout << "Metier : Commercial" << endl;
-}
-
-double Commercial::calculer_base_salaire() {
-    return m_BASE + m_chiffre_affaire * m_PART;
-}
-

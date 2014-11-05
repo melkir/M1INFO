@@ -13,26 +13,14 @@ public:
 
     virtual double calculer_base_salaire();
 
+    int getNbUniteProduite() const;
+
+    void setNbUniteProduite(int nb_unite_produite);
+
+    static constexpr double m_BASE = 10, m_PART = 10, m_GAIN_UNITE = 10;
+
 private:
-    int nb_unite_produite;
-    static const double m_BASE = 100, m_PART = 5, m_GAIN_UNITE = 12;
+    int m_nb_unite_produite;
 };
 
 #endif
-
-Technicien::Technicien() : Employe() {
-    std::cout << "Creation de l'objet Technicien" << std::endl;
-}
-
-Technicien::~Technicien() {
-    std::cout << "Destruction de l'objet Technicien" << std::endl;
-}
-
-void Technicien::affiche() const {
-    Employe::affiche();
-    std::cout << "Metier : Technicien" << std::endl;
-}
-
-double Technicien::calculer_base_salaire() {
-    return m_BASE + nb_unite_produite * m_PART * m_GAIN_UNITE;
-}

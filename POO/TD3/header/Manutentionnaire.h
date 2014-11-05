@@ -13,26 +13,13 @@ public:
 
     virtual double calculer_base_salaire();
 
+    int getNbHeures() const;
+
+    void setNbHeures(int nb_heures);
+
+    static constexpr double m_BASE_SALAIRE_HORAIRE = 10;
 private:
-    int nb_heures = 0;
-    static const double m_BASE_SALAIRE_HORAIRE = 200;
+    int m_nb_heures = 0;
 };
 
 #endif
-
-Manutentionnaire::Manutentionnaire() : Employe() {
-    std::cout << "Creation de l'objet Manutentionnaire" << std::endl;
-}
-
-Manutentionnaire::~Manutentionnaire() {
-    std::cout << "Destruction de l'objet Manutentionnaire" << std::endl;
-}
-
-void Manutentionnaire::affiche() const {
-    Employe::affiche();
-    std::cout << "Metier : Manutentionnaire" << std::endl;
-}
-
-double Manutentionnaire::calculer_base_salaire() {
-    return m_BASE_SALAIRE_HORAIRE * nb_heures;
-}
