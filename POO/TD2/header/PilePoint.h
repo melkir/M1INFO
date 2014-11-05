@@ -10,7 +10,6 @@ public:
 
     PilePoint(const PilePoint &other);
 
-
     PilePoint &operator=(const PilePoint &);
 
     ~PilePoint();

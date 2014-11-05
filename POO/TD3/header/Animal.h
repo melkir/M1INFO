@@ -13,7 +13,7 @@ public:
 
     Animal(const Animal &);
 
-    std::string getNomDuCri() const;
+    std::string &getNomDuCri() const;
 
     int getAge() const;
 

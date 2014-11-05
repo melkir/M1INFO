@@ -12,7 +12,7 @@ public:
 
     Chien(int age, std::string nom_du_cri, std::string cri);
 
-    Chien& operator=(Animal const&); // opérateur d'affectation
+    Chien &operator=(Animal const &); // opérateur d'affectation
 
     // virtual facultatif car hérité
     virtual void presenter() const;
