@@ -44,7 +44,7 @@ void Point::setY(float y) {
 }
 
 int Point::getNbPts() const {
-    return Point::nbPts;
+    return nbPts;
 }
 
 int Point::distance(const Point &other) {
@@ -56,6 +56,7 @@ float Point::distance(const Point &p1, const Point &p2) {
 }
 
 Point::~Point() {
+    --nbPts;
 }
 
 ostream &operator<<(ostream &os, const Point &p) {

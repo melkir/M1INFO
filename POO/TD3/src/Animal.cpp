@@ -20,10 +20,6 @@ Animal::Animal(const Animal &a)
         : age(a.age), nom_du_cri(a.nom_du_cri) {
 }
 
-string Animal::getNomDuCri() const {
-    return nom_du_cri;
-}
-
 int Animal::getAge() const {
     return age;
 }
@@ -47,4 +43,8 @@ void Animal::presenter() const {
 
 Animal::~Animal() {
     cout << "Destruction de l'objet Animal" << endl;
+}
+
+std::string Animal::getNomDuCri() const {
+    return nom_du_cri;
 }
