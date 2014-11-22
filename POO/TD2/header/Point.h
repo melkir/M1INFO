@@ -28,9 +28,9 @@ public :
 
     int getNbPts() const;
 
-    int distance(const Point &other);
+    int distance(const Point& other);
 
-    static float distance(const Point &p1, const Point &p2);
+    static float distance(const Point& p1, const Point& p2);
 
 };
 

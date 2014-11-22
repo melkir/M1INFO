@@ -9,11 +9,11 @@ public:
 
     Polygone(); // Constructeur par defaut
 
-    Polygone(const Polygone &); // Constructeur par recopie
+    Polygone(const Polygone&); // Constructeur par recopie
 
     ~Polygone(); // Destructeur
 
-    Polygone &operator=(const Polygone &); // Operateur d'affectation
+    Polygone &operator=(const Polygone&); // Operateur d'affectation
     /* --- END --- */
 
     Polygone(PilePoint);
@@ -24,7 +24,7 @@ public:
 
     const size_t getNbPoints() const;
 
-    friend void swap(Polygone &p1, Polygone &p2);
+    friend void swap(Polygone& p1, Polygone& p2);
 
 private:
     PilePoint m_pilePoint;

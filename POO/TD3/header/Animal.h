@@ -11,7 +11,7 @@ public:
 
     Animal(int age, std::string nom_du_cri);
 
-    Animal(const Animal &);
+    Animal(const Animal&);
 
     std::string getNomDuCri() const;
 

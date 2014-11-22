@@ -24,7 +24,7 @@ Chien::~Chien() {
     cout << "Destruction de l'objet Chien" << endl;
 }
 
-Chien &Chien::operator=(Animal const &a) {
+Chien &Chien::operator=(Animal const& a) {
     this->setAge(a.getAge());
     this->setNomDuCri(a.getNomDuCri());
     cri = "";
