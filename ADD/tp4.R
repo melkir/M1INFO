@@ -2,16 +2,16 @@
 library(FactoMineR)
 
 # --- Exercice 1 ---
-joujou = read.table("joujou.txt")
-pca.joujou = PCA(joujou, graph=FALSE)
+joujou = read.table("data/joujou.txt")
+joujou.pca = PCA(joujou, graph=FALSE)
 #dimdesc(pca.joujou)
 # V2, V4 sont fortement correlé dans la dim1
 # V3 est fortement correlé dans la dim2
 # V1 est faiblement correlé dans les dim1 et dim2
 
 # --- Exercice 2 ---
-chaise = read.table("chaise.txt")
-pca.chaise = PCA(chaise, graph=FALSE)
+chaise = read.table("data/chaise.txt")
+chaise.pca = PCA(chaise, graph=FALSE)
 #dimdesc(pca.chaise)
 # $Dim.1$quanti
 #    correlation     p.value
@@ -26,8 +26,8 @@ pca.chaise = PCA(chaise, graph=FALSE)
 # V3   0.7584628 0.04811430
 
 # --- Exercice 3 ---
-papillon = read.table("papillon.txt")
-pca.papillon = PCA(papillon)
+papillon = read.table("data/papillon.txt")
+papillon.pca = PCA(papillon, graph=FALSE)
 # $Dim.1$quanti
 #    correlation      p.value
 # V3   0.9574313 8.336957e-13
@@ -48,3 +48,14 @@ pca.papillon = PCA(papillon)
 # V1  -0.5408064 0.007710041
 
 # --- Exercice 4 ---
+scaled.pca = PCA(papillon, scale.unit=FALSE, graph=FALSE)
+nscaled.pca = PCA(papillon, scale.unit=TRUE, graph=FALSE)
+#pdf("PapillonGraph.pdf",width=12,height=10)
+#par(mfrow=c(2,2))
+#plot(scaled.pca, choix="ind", new.plot=FALSE)
+#plot(scaled.pca, choix="var", new.plot=FALSE)
+#plot(nscaled.pca, choix="ind", new.plot=FALSE)
+#plot(nscaled.pca, choix="var", new.plot=FALSE)
+#dev.off()
+barplot(scaled.pca$eig[,1],main="Eigenvalues") # 3 dimensions determinés
+
