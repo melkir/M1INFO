@@ -8,25 +8,25 @@ public:
     /* --- Forme canonique de Coplien --- */
     PilePoint();
 
-    PilePoint(const PilePoint &other);
+    PilePoint(const PilePoint&other);
 
-    PilePoint &operator=(const PilePoint &);
+    PilePoint &operator=(const PilePoint&);
 
     ~PilePoint();
 
     /* --- END --- */
 
-    PilePoint(PilePoint &&); // Optimisation C++11
+    PilePoint(PilePoint&&); // Optimisation C++11
 
     PilePoint(size_t);
 
-    void empile(const Point &);
+    void empile(const Point&);
 
     Point depile();
 
-    void operator<(Point &);
+    void operator<(Point&);
 
-    void operator>(Point &);
+    void operator>(Point&);
 
     bool pleine();
 
@@ -34,7 +34,7 @@ public:
 
     void affiche() const;
 
-    friend void swap(PilePoint &p1, PilePoint &p2);
+    friend void swap(PilePoint& p1, PilePoint& p2);
 
     const size_t getSize() const;
 

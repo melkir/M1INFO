@@ -16,7 +16,7 @@ Animal::Animal(int age, string nom_du_cri)
     cout << "Création de l'objet Animal" << endl;
 }
 
-Animal::Animal(const Animal &a)
+Animal::Animal(const Animal& a)
         : age(a.age), nom_du_cri(a.nom_du_cri) {
 }
 

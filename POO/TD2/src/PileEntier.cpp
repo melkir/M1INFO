@@ -53,7 +53,7 @@ void PileEntier::empile(const int &e) {
     int *tmp = new int[m_size + 1];
     // On copie les données et on ajoute l'élément
 //    for (int i = 0; i < m_size; ++i) tmp[i] = m_storage[i];
-    std::copy(m_storage, m_storage + m_size, tmp);
+    copy(m_storage, m_storage + m_size, tmp);
     // On ajoute le nouveau entier à la pile
     tmp[m_size] = e;
     // On libère l’ancien tableau (s’il y en avait un).
@@ -74,7 +74,7 @@ int PileEntier::depile() {
     // On extrait la donnée et on copie le reste
     int res = m_storage[--m_size];
 //    for (int i = 0; i < m_size; ++i) tmp[i] = m_storage[i];
-    std::copy(m_storage, m_storage + m_size, tmp);
+    copy(m_storage, m_storage + m_size, tmp);
     m_storage = tmp;
     return res;
 }
@@ -98,4 +98,9 @@ void swap(PileEntier &p1, PileEntier &p2) {
     swap(p1.m_storage, p2.m_storage);
     swap(p1.m_size, p2.m_size);
     swap(p1.m_capacity, p2.m_capacity);
+}
+
+ostream& operator<<(ostream& os, const PileEntier& p) {
+    for (int i = 0; i < p.m_size; ++i) os << p.m_storage[i] << " ";
+    return os;
 }

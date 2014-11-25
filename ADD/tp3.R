@@ -67,6 +67,10 @@ graph_exo7 <- function() {
 # --- Exercice 8 ---
 graph_exo8 <- function() {
 	# TODO
+	m<-matrix(c(2,3,0,1,0,0,0,4,0,0,0,5,6,0,0), 5, 3, byrow = TRUE)
+	layout(m)
+	layout.show(6)
+	par(mfrow=c(1,1))	# restore default param
 }
 
 # --- Exercice 9 ---
@@ -93,16 +97,4 @@ graph_exo10 <- function() {
 graph_exo11 <- function() {
 	x=seq(-2, 2, 0.1)
 	plot(x, x^5+x^3-3*x, "l")
-}
-
-graph <- function(type) {
-	switch(type,
-		none 	= print("Usage: function('e<num>')"),
-		g6a 	= graph_exo6a(),
-		g6b 	= graph_exo6b(),
-		g7 		= graph_exo7(),
-		g8 		= graph_exo8(),
-		g9 		= graph_exo9(),
-		g10 	= graph_exo10(),
-		g11 	= graph_exo11())
 }
