@@ -1,0 +1,14 @@
+1. sed 's/a/o/g' test.txt
+2. sed -F cesar.sed test.txt
+3. sed 's/:/ /g' /etc/passwd
+4. awk -F : '$4==0 {print $0}' /etc/passwd
+5. sed -n '12,34p' /etc/passwd
+6. sed '10,15 s/bash/sh/g' /etc/passwd
+7. sed -e '/^#/d' -e '/^$/d' test2.txt
+8. ls -l | awk '{print $9,$5}'
+9. ls -l | awk -f ls.awk
+10. awk -f odd.awk /etc/passwd
+11. awk -f gid.awk /etc/passwd
+12. awk -F: '$0 !~/root/ && $0 ~/bash/ {print$0}' /etc/passwd
+13. awk -F : '{print NR,$0}' /etc/passwd
+14.
