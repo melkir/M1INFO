@@ -1,0 +1,20 @@
+1.1
+IPv4 	: 172.30.38.221/20
+MAC 	: 48:5d:60:f9:5e:1b
+1.2
+Une seule
+IPv6 	: fe80::4a5d:60ff:fef9:5e1b/64
+1.4
+39 caractères / 128 bits / 16 octets
+1.5
+Le format est le suivant :
+- Une adresse IPv6 se note en hexadécimal et en 8 mots de 16 bits séparés par le caractère deux points ":".
+- Les "0" les plus à gauche des mots de 16 bits se figurent pas dans l'écriture.
+- Les mots tout à "0" ou un ensemble de mots consécutif tout à "0" peuvent être omis, on obtient "::".
+Rmq : On ne le fait qu'une fois pour éviter toute ambiguîté.
+- Une adresse se représente avec son préfixe comme il est déjà pratiqué dans la notation CIDR.
+1.6
+
+2.
+Decimal 		: 172.30.38.221/20
+Hexadecimal 	: AC.1E.26.DD/20
