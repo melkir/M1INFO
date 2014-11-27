@@ -7,11 +7,13 @@ class Mammifere : virtual public Animal {
 public:
     Mammifere(int x, int y, std::string nom, bool estFemelle, int vitesse);
 
+    Mammifere(int i);
+
     virtual ~Mammifere();
 
     virtual void deplacer();
 
-    virtual const Mammifere *engendrer(bool isFemale);
+    virtual const Mammifere* engendrer(bool isFemale);
 
 protected:
     int m_vitesse;

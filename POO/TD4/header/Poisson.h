@@ -7,6 +7,8 @@ class Poisson : virtual public Animal {
 public:
     Poisson(int x, int y, std::string nom, bool estFemelle, int profondeur);
 
+    Poisson(int i);
+
     virtual ~Poisson();
 
     virtual void deplacer();

@@ -1,10 +1,12 @@
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#ifndef __ANIMAL_H_
+#define __ANIMAL_H_
 
 #include <iostream>
 
 class Animal {
 public:
+    Animal();
+
     Animal(int x, int y, std::string nom, bool estFemelle);
 
     virtual ~Animal();
@@ -23,4 +25,4 @@ protected:
     bool m_estFemelle;
 };
 
-#endif // ANIMAL_H
+#endif // __ANIMAL_H_

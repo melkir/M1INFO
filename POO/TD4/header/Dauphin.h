@@ -10,7 +10,7 @@ public:
 
     void deplacer();
 
-    const Mammifere *engendrer(bool isFemale);
+    const Dauphin* engendrer(bool isFemale);
 
     void affiche() const;
 };
