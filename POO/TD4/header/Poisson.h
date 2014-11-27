@@ -7,15 +7,27 @@ class Poisson : virtual public Animal {
 public:
     Poisson(int x, int y, std::string nom, bool estFemelle, int profondeur);
 
-    Poisson(int i);
+    Poisson(const Poisson& p);
+
+    virtual std::string toString() const;
+
+    friend std::ostream& operator<<(std::ostream& os, const Poisson& m);
 
     virtual ~Poisson();
 
     virtual void deplacer();
 
-    virtual const Poisson* engendrer(bool isFemale);
+    virtual Poisson *engendrer(bool isFemale);
 
-protected:
+    int getProfondeur() const {
+        return m_profondeur;
+    }
+
+    void setProfondeur(int profondeur) {
+        m_profondeur = profondeur;
+    }
+
+private:
     int m_profondeur;
 };
 
