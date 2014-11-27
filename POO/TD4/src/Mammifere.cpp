@@ -21,7 +21,7 @@ void Mammifere::deplacer() {
     setY(getY() + m_vitesse);
 }
 
-Mammifere* Mammifere::engendrer(bool isFemale) {
+Mammifere *Mammifere::engendrer(bool isFemale) {
     if (!estFemelle()) {
         cerr << "Hey ! Je suis un male, je ne peut pas faire de bebe !" << endl;
         return nullptr;

@@ -15,8 +15,8 @@ Dauphin::Dauphin(const Dauphin &d) : Animal(d), Mammifere(d), Poisson(d) {
 
 Dauphin::Dauphin(Mammifere const *pM)
         : Animal(pM->getX(), pM->getY(), pM->getNom(), pM->estFemelle()),
-    Mammifere(pM->getX(), pM->getY(), pM->getNom(), pM->estFemelle(), pM->getVitesse()),
-    Poisson(pM->getX(), pM->getY(), pM->getNom(), pM->estFemelle(), 0) {
+          Mammifere(pM->getX(), pM->getY(), pM->getNom(), pM->estFemelle(), pM->getVitesse()),
+          Poisson(pM->getX(), pM->getY(), pM->getNom(), pM->estFemelle(), 0) {
     cout << "~~~ Constructeur de recopie Dauphin avec un mammifère en paramètre" << endl;
 }
 

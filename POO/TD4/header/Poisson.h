@@ -7,11 +7,11 @@ class Poisson : virtual public Animal {
 public:
     Poisson(int x, int y, std::string nom, bool estFemelle, int profondeur);
 
-    Poisson(const Poisson& p);
+    Poisson(const Poisson &p);
 
     virtual std::string toString() const;
 
-    friend std::ostream& operator<<(std::ostream& os, const Poisson& m);
+    friend std::ostream &operator<<(std::ostream &os, const Poisson &m);
 
     virtual ~Poisson();
 

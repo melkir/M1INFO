@@ -12,11 +12,11 @@ public:
 
     std::string toString() const;
 
-    friend std::ostream& operator<<(std::ostream& os, const Dauphin& d);
+    friend std::ostream &operator<<(std::ostream &os, const Dauphin &d);
 
     ~Dauphin();
 
-    Dauphin(const Dauphin& d);
+    Dauphin(const Dauphin &d);
 
     void deplacer();
 

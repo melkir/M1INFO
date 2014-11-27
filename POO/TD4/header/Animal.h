@@ -7,11 +7,11 @@ class Animal {
 public:
     Animal(int x, int y, std::string nom, bool estFemelle);
 
-    Animal(const Animal& a);
+    Animal(const Animal &a);
 
     virtual std::string toString() const;
 
-    friend std::ostream& operator<<(std::ostream& os, const Animal& a);
+    friend std::ostream &operator<<(std::ostream &os, const Animal &a);
 
     virtual ~Animal();
 

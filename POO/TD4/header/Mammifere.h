@@ -7,11 +7,11 @@ class Mammifere : virtual public Animal {
 public:
     Mammifere(int x, int y, std::string nom, bool estFemelle, int vitesse);
 
-    Mammifere(const Mammifere& m);
+    Mammifere(const Mammifere &m);
 
     virtual std::string toString() const;
 
-    friend std::ostream& operator<<(std::ostream& os, const Mammifere& m);
+    friend std::ostream &operator<<(std::ostream &os, const Mammifere &m);
 
     virtual ~Mammifere();
 

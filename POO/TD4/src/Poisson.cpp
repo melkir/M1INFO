@@ -20,7 +20,7 @@ void Poisson::deplacer() {
     setY(getY() + 1);
 }
 
-Poisson* Poisson::engendrer(bool isFemale) {
+Poisson *Poisson::engendrer(bool isFemale) {
     if (!estFemelle()) {
         cerr << "Hey ! Je suis un male, je ne peut pas faire de bebe !" << endl;
         return nullptr;

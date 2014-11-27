@@ -1,5 +1,4 @@
 #include <iostream>
-#include <X11/X.h>
 #include "../header/Dauphin.h"
 
 using namespace std;
