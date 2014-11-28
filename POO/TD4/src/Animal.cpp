@@ -9,7 +9,7 @@ Animal::Animal(int x, int y, std::string nom, bool estFemelle)
 
 Animal::Animal(const Animal &a)
         : m_x(a.m_x), m_y(a.m_y), m_nom(a.m_nom), m_estFemelle(a.m_estFemelle) {
-    cout << "~~~ Constructeur de recopie Animal" << endl;
+    cout << "~~~ Constructeur par recopie Animal" << endl;
 }
 
 Animal::~Animal() {

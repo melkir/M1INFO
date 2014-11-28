@@ -28,7 +28,7 @@ Mammifere *Mammifere::engendrer(bool isFemale) {
     }
     string name = getNom() + (isFemale ? "_fille" : "_fils");
     cout << "Je donne naissance à un Mammifere " << (isFemale ? "femelle" : "male") << endl;
-    return new Mammifere(getX(), getY(), name, isFemale, m_vitesse);
+    return new Mammifere(getX(), getY(), getNom(), isFemale, getVitesse());
 }
 
 ostream &operator<<(std::ostream &os, const Mammifere &m) {
