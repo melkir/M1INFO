@@ -8,8 +8,6 @@ class Dauphin : public Poisson, public Mammifere {
 public:
     Dauphin(int x, int y, std::string nom, bool isFemale, int vitesse, int profondeur);
 
-    Dauphin(Mammifere const *pM);
-
     std::string toString() const;
 
     friend std::ostream &operator<<(std::ostream &os, const Dauphin &d);

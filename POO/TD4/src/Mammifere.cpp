@@ -28,11 +28,7 @@ Mammifere *Mammifere::engendrer(bool isFemale) {
     }
     string name = getNom() + (isFemale ? "_fille" : "_fils");
     cout << "Je donne naissance à un Mammifere " << (isFemale ? "femelle" : "male") << endl;
-    // TODO Créer un vrai constructeur par recopie !
-    Mammifere *baby = this;
-    // On change le nom pour y ajouter un suffixe
-    baby->setNom(name);
-    return baby;
+    return new Mammifere(getX(), getY(), name, isFemale, m_vitesse);
 }
 
 ostream &operator<<(std::ostream &os, const Mammifere &m) {

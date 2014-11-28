@@ -7,7 +7,7 @@ Poisson::Poisson(int x, int y, std::string nom, bool estFemelle, int profondeur)
     cout << "+++ Constructeur Poisson" << endl;
 }
 
-Poisson::Poisson(Poisson const &p) : Animal(p), m_profondeur(p.m_profondeur) {
+Poisson::Poisson(const Poisson &p) : Animal(p), m_profondeur(p.m_profondeur) {
     cout << "~~~ Constructeur de recopie Poisson" << endl;
 }
 
@@ -27,7 +27,6 @@ Poisson *Poisson::engendrer(bool isFemale) {
     }
     cout << "Je donne naissance à un Poisson " << (isFemale ? "femelle" : "male") << endl;
     string name = getNom() + (isFemale ? "_fille" : "_fils");
-    // On renvoi un pointeur vers le nouveau bebe poisson
     return new Poisson(getX(), getY(), name, isFemale, m_profondeur);
 }
 
