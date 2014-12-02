@@ -1,0 +1,8 @@
+#Prenom 		NoteSYS		Note SSIC
+Alexey	16	18
+Yuan	12	13
+David	18	2
+Benoit	8	5
+Patrick	5	18
+Amma	14	3
+Siham	13	1
