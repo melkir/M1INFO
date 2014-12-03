@@ -16,5 +16,7 @@ Rmq : On ne le fait qu'une fois pour éviter toute ambiguîté.
 1.6
 
 2.
-Decimal 		: 172.30.38.221/20
-Hexadecimal 	: AC.1E.26.DD/20
+Decimal 		: 172.30.42.95/20
+Hexadecimal 	: AC.1E.2A.5F
+172.30.42.95 <=> 0:0:0:0:0:ffff:ac1e:2a5f
+

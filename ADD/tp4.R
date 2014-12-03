@@ -48,14 +48,16 @@ papillon.pca = PCA(papillon, graph=FALSE)
 # V1  -0.5408064 0.007710041
 
 # --- Exercice 4 ---
-scaled.pca = PCA(papillon, scale.unit=FALSE, graph=FALSE)
-nscaled.pca = PCA(papillon, scale.unit=TRUE, graph=FALSE)
-#pdf("PapillonGraph.pdf",width=12,height=10)
-#par(mfrow=c(2,2))
-#plot(scaled.pca, choix="ind", new.plot=FALSE)
-#plot(scaled.pca, choix="var", new.plot=FALSE)
-#plot(nscaled.pca, choix="ind", new.plot=FALSE)
-#plot(nscaled.pca, choix="var", new.plot=FALSE)
-#dev.off()
-barplot(scaled.pca$eig[,1],main="Eigenvalues") # 3 dimensions determinés
-
+data(decathlon)
+scaled.pca = PCA(decathlon, scale.unit=TRUE, quanti.sup=11:12, quali.sup=13, graph=FALSE)
+nscaled.pca = PCA(decathlon, scale.unit=FALSE, quanti.sup=11:12, quali.sup=13, graph=FALSE)
+# pdf("DecathlonGraph.pdf",width=12,height=10)
+# par(mfrow=c(2,2))
+# plot(scaled.pca, choix="ind", new.plot=FALSE)
+# plot(scaled.pca, choix="var", new.plot=FALSE)
+# plot(nscaled.pca, choix="ind", new.plot=FALSE)
+# plot(nscaled.pca, choix="var", new.plot=FALSE)
+# dev.off()
+barplot(scaled.pca$eig[,1], main="Eigenvalues") # 4 dimensions determinés
+barplot(scaled.pca$eig[1:4,2], main="Inertie")
+dimdesc(scaled.pca)
