@@ -1,0 +1,13 @@
+{
+    "name": "todolist",
+    "version": "0.0.0",
+    "dependencies": {
+    	"ejs": "latest",
+        "express": "latest",
+        "cookie-parser" : "latest",
+        "express-session": "latest",
+        "body-parser": "latest"
+    },
+    "author": "melkir",
+	"description": "Une simple todolist"
+}
