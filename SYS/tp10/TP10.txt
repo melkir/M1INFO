@@ -8,3 +8,32 @@
 
 --- Exercice 2 ---
 1. grep -x '.\{3\}' file.txt
+2. grep '.\{3\}' file.txt
+3. grep -x '.\{,3\}' file.txt
+4. grep -c "^$" file.txt
+5. grep 'voisin' file.txt
+6. grep -x 'voisin' file.txt
+7. grep '^voisin' file.txt
+8. grep -v '^[A-G]' file.txt
+9. grep -v "^\s*$" file.txt > file1.txt
+
+--- Exercice 3 ---
+3.1
+    1. sed -n '/\<toujours\>/=' file.txt
+    2. sed 's/\<voisin\>//g' file.txt
+    3. sed -e '/\<voisin\>/d' -e '/\<voisines\>/d' file.txt
+    4. sed 's/^.//g' file.txt
+    5. sed 's/.$//g' file.txt
+    6. sed -e 's/\<voisin\>/Bob/g' -e 's/\<voisines\>/Alice/g' file.txt > file2.txt
+    7. sed -n '8,18 p' file.txt > file3.txt
+    8. sed 'y/abcdefghijklmnopqrstuvwxyz/defghijklmnopqrstuvwxyzabc/' file.txt
+3.2
+    sed '10,15 s/\<bash\>/sh/g' /etc/passwd
+3.3
+    sed -e '/^$/d' -e '/^#/d' /etc/samba/samba.conf
+
+--- Exercice 4 ---
+4.1
+    1. awk '{print NR, $0}' /etc/passwd
+    2. awk -F: 'BEGIN {OFS=":"} $3>1002 {print $1,$6,$7}' /etc/passwd
+4.3 awk '$0 !~ /[aeiouy]/ {++nb} END{print nb}' file.txt
