@@ -1,0 +1,10 @@
+--- Exercice 1 ---
+1. grep '[Pp]oire' test.txt
+2. grep 'e$' test.txt
+3. grep 'oi' test.txt
+4. grep '[0-9]' test.txt
+5. grep '^mo.*[^0-9]$' test.txt
+6. grep -x '.\{4,5\}' test.txt
+
+--- Exercice 2 ---
+1. grep -x '.\{3\}' file.txt
