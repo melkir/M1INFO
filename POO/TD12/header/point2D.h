@@ -7,14 +7,14 @@ public:
     point2D() : m_x(0), m_y(0) {
     }
 
-    point2D(float x, float y) : m_x(x), m_y(y) {
+    point2D(int x, int y) : m_x(x), m_y(y) {
     }
 
-    float getY() const {
+    int getY() const {
         return m_y;
     }
 
-    float getX() const {
+    int getX() const {
         return m_x;
     }
 
@@ -34,7 +34,7 @@ public:
     }
 
 private:
-    float m_x, m_y;
+    int m_x, m_y;
 };
 
 
