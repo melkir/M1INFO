@@ -9,7 +9,11 @@ int main() {
     poly2D.push(a);
     poly2D.push(b);
     poly2D.push(c);
-    cout << poly2D.barycentre() << endl;
-    cout << poly2D.barycentre_1() << endl;
+//    cout << poly2D.barycentre() << endl;
+//    cout << poly2D.barycentre_1() << endl;
+    cout << "Avant" << endl;
+    cout << poly2D;
+    cout << "Apres" << endl;
+    polygon2D::triSelection(poly2D, (int) poly2D.getSize());
     return 0;
 }

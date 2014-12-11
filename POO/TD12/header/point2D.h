@@ -18,7 +18,13 @@ public:
         return m_x;
     }
 
-    /* Operateur optionnel dans le cas du TD */
+    inline bool operator<(const point2D &lhs, const point2D &rhs) {
+        if (lhs.m_x < rhs.m_x) return true;
+        else if (lhs.m_x == rhs.m_x) return lhs.m_y < rhs.m_y;
+        else return false;
+    }
+
+    /* Operateur optionnel dans le cadre du TD */
     point2D &operator+=(const point2D &rhs) {
         m_x += rhs.m_x;
         m_y += rhs.m_y;
@@ -29,11 +35,13 @@ public:
         return lhs += rhs;
     }
 
+    /** Stream extraction */
     friend std::ostream &operator<<(std::ostream &os, const point2D &p) {
         return os << '(' << p.m_x << ',' << p.m_y << ')';
     }
 
-private:
+protected:
+    /** Le point est caractérisé par son abscisse et son ordonnée */
     int m_x, m_y;
 };
 

@@ -4,24 +4,21 @@
 
 #include "point2D.h"
 
-class averagePoints2D {
+/** Foncteur qui calcul le barycentre a partir d'une liste de points */
+class _barycentre {
 public:
-    averagePoints2D() : num(0), sum_x(0), sum_y(0) {
-    }
-
     void operator()(const point2D &p) {
-        num++;
+        ++nbElem;
         sum_x += p.getX();
         sum_y += p.getY();
     }
 
     operator point2D() const {
-        return point2D(sum_x / num, sum_y / num);
+        return point2D(sum_x / nbElem, sum_y / nbElem);
     }
 
 private:
-    int num;
-    int sum_x, sum_y;
+    int nbElem = 0, sum_x = 0, sum_y = 0;
 };
 
 
