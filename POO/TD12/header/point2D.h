@@ -1,6 +1,7 @@
 #ifndef __POINT2D_H_
 #define __POINT2D_H_
 
+#include <iostream>
 
 class point2D {
 public:
@@ -18,9 +19,10 @@ public:
         return m_x;
     }
 
-    inline bool operator<(const point2D &lhs, const point2D &rhs) {
-        if (lhs.m_x < rhs.m_x) return true;
-        else if (lhs.m_x == rhs.m_x) return lhs.m_y < rhs.m_y;
+    /** Operateur de comparaison de point2D */
+    inline bool operator<(const point2D &rhs) const {
+    if (m_x < rhs.m_x) return true;
+else if (m_x == rhs.m_x) return m_y < rhs.m_y;
         else return false;
     }
 
@@ -31,19 +33,19 @@ public:
         return *this;
     }
 
+    /** Operateur d'addition de point2D */
     friend point2D operator+(point2D lhs, const point2D &rhs) {
         return lhs += rhs;
     }
 
-    /** Stream extraction */
+    /** Stream extraction point2D */
     friend std::ostream &operator<<(std::ostream &os, const point2D &p) {
         return os << '(' << p.m_x << ',' << p.m_y << ')';
     }
 
-protected:
+    private:
     /** Le point est caractérisé par son abscisse et son ordonnée */
     int m_x, m_y;
 };
-
 
 #endif //__POINT2D_H_

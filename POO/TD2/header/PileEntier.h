@@ -44,3 +44,14 @@ private:
 };
 
 #endif
+static void triSelection(polygon2D& poly) {
+    vector<point2D> t = poly.m_vPoint2D;
+    const int n = (int) poly.m_vPoint2D.size();
+    int i, min, j;
+    for (i = 0; i < n - 1; ++i) {
+        min = i;
+        for (j = i + 1; j < n; ++j)
+            if (t[j] < t[min]) min = j;
+        if (min != i) std::swap(t[i], t[min]);
+    }
+}
