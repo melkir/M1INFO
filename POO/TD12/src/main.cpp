@@ -12,7 +12,7 @@ int random(int min, int max) {
 /** Creation d'un polygone contenant nb point2D genere aleatoirement */
 const polygon2D generate(int nb) {
     polygon2D poly2D;
-    srand(time(NULL));
+    srand((unsigned int) time(NULL));
     // Ajout de nb point2D aleatoire au polygone
     for (int i = 0; i < nb; ++i)
         poly2D.push(point2D(random(-100, 100), random(-100, 100)));

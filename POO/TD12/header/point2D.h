@@ -25,9 +25,7 @@ public:
 
     /** Operateur de comparaison de point2D */
     inline bool operator<(const point2D &rhs) const {
-        if (m_x < rhs.m_x) return true;
-        else if (m_x == rhs.m_x) return m_y < rhs.m_y;
-        else return false;
+        return m_x < rhs.m_x || m_x == rhs.m_x && m_y < rhs.m_y;
     }
 
     /* Operateur optionnel dans le cadre du TD */
@@ -44,7 +42,7 @@ public:
 
     /** Stream extraction point2D */
     friend std::ostream &operator<<(std::ostream &os, const point2D &p) {
-        return os << '(' << p.m_x << ',' << p.m_y << ')';
+        return os << '(' << p.getX() << ',' << p.getY() << ')';
     }
 
 private:
