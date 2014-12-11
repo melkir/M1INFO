@@ -6,8 +6,8 @@
 /** Foncteur qui calcul le barycentre a partir d'une liste de points */
 class _barycentre {
 public:
-/** Calcul de la somme des points2D */
-point2D operator()(const point2D &p) {
+    /** Calcul de la somme des points2D */
+    point2D operator()(const point2D &p) {
         ++nbElem;
         sum_x += p.getX();
         sum_y += p.getY();
@@ -19,6 +19,7 @@ point2D operator()(const point2D &p) {
     }
 
 private:
+    /** Nombre d'elements, somme des abscisses, somme des ordonnees */
     int nbElem = 0, sum_x = 0, sum_y = 0;
 };
 

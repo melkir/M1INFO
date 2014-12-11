@@ -7,8 +7,7 @@
 class _comparePoint2D {
 public:
     bool operator()(point2D a, point2D b) {
-        // Voir l'operateur < dans la classe point2D pour plus de detail
-        return a < b;
+        return a < b; // operator< de point2D
     }
 };
 
