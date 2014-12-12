@@ -17,7 +17,7 @@ public:
 
     /** Destructeur optionnel : C++11 free memory */
     ~polygon2D() {
-        m_vPoint2D.shrink_to_fit();
+        // m_vPoint2D.shrink_to_fit();
     }
 
     /** Calcul du barycentre avec foncteur */

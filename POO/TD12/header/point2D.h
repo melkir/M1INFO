@@ -25,7 +25,7 @@ public:
 
     /** Operateur de comparaison de point2D */
     inline bool operator<(const point2D &rhs) const {
-        return m_x < rhs.m_x || m_x == rhs.m_x && m_y < rhs.m_y;
+        return m_x < rhs.m_x || (m_x == rhs.m_x && m_y < rhs.m_y);
     }
 
     /* Operateur optionnel dans le cadre du TD */
