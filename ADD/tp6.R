@@ -21,5 +21,5 @@ res.pca = PCA(decath.classes, quanti.sup=11:12, quali.sup=13:14, graph=FALSE)
 # Uniquement sur les 8 composantes principales
 res.pca = PCA(decathlon, quanti.sup=11:12, quali.sup=13, graph=FALSE, ncp=8)
 res.cah=agnes(res.pca$ind$coord, method="ward")
-plot(res.cah)
-HCPC(res.pca)
+#plot(res.cah)
+#HCPC(res.pca)

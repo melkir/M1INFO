@@ -58,6 +58,12 @@ nscaled.pca = PCA(decathlon, scale.unit=FALSE, quanti.sup=11:12, quali.sup=13, g
 # plot(nscaled.pca, choix="ind", new.plot=FALSE)
 # plot(nscaled.pca, choix="var", new.plot=FALSE)
 # dev.off()
-barplot(scaled.pca$eig[,1], main="Eigenvalues") # 4 dimensions determinés
-barplot(scaled.pca$eig[1:4,2], main="Inertie")
+barplot(scaled.pca$eig[,2], main="Eigenvalues") # 4 dimensions determinés
+round(scaled.pca$eig[1:4,],2) # Inertie des 4 premières dimensions
 dimdesc(scaled.pca)
+par(mfrow=c(2,2))
+plot(scaled.pca, choix="var", axes=2:3)
+plot(scaled.pca, choix="var", axes=3:4)
+plot(scaled.pca, choix="ind", axes=2:3)
+plot(scaled.pca, choix="ind", axes=3:4)
+
