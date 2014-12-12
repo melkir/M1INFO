@@ -42,8 +42,8 @@ public:
     }
 
     /** Operateur d'addition de point2D */
-    friend point2D operator+(point2D lhs, const point2D &rhs) {
-        return lhs += rhs;
+    point2D operator+(const point2D &p) {
+        return *this += p;
     }
 
     /** Stream extraction point2D */
@@ -54,8 +54,8 @@ public:
 private:
     /** Abscisse du point2D */
     int m_x,
-	/** Ordonnee du point2D */
-	m_y;
+    /** Ordonnee du point2D */
+            m_y;
 };
 
 #endif //__POINT2D_H_

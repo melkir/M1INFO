@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <iostream>
 #include <bits/stream_iterator.h>
-#include "../header/point2D.h"
+#include "point2D.h"
 #include "_barycentre.h"
 #include "_comparePoint2D.h"
 
