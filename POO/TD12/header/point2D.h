@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+/** Point en 2 dimensions */
 class point2D {
 public:
     /** Constructeur de point2D */
@@ -33,14 +34,14 @@ public:
         return m_x < rhs.m_x || (m_x == rhs.m_x && m_y < rhs.m_y);
     }
 
-    /* Operateur optionnel dans le cadre du TD */
+    /** Operateur d'addition de point2D */
     point2D &operator+=(const point2D &rhs) {
         m_x += rhs.m_x;
         m_y += rhs.m_y;
         return *this;
     }
 
-    /** Operateur optionnel d'addition de point2D */
+    /** Operateur d'addition de point2D */
     friend point2D operator+(point2D lhs, const point2D &rhs) {
         return lhs += rhs;
     }
@@ -51,8 +52,10 @@ public:
     }
 
 private:
-    /** Un point2D est caractérisé par son abscisse et son ordonnée */
-    int m_x, m_y;
+    /** Abscisse du point2D */
+    int m_x,
+	/** Ordonnee du point2D */
+	m_y;
 };
 
 #endif //__POINT2D_H_
