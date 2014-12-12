@@ -37,3 +37,5 @@
     1. awk '{print NR, $0}' /etc/passwd
     2. awk -F: 'BEGIN {OFS=":"} $3>1002 {print $1,$6,$7}' /etc/passwd
 4.3 awk '$0 !~ /[aeiouy]/ {++nb} END{print nb}' file.txt
+
+

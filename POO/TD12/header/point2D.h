@@ -40,7 +40,7 @@ public:
         return *this;
     }
 
-    /** Operateur d'addition de point2D */
+    /** Operateur optionnel d'addition de point2D */
     friend point2D operator+(point2D lhs, const point2D &rhs) {
         return lhs += rhs;
     }
