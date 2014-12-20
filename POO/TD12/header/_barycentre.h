@@ -22,17 +22,12 @@ public:
     }
 
 private:
-<<<<<<< HEAD
-    /** Nombre d'elements, somme des abscisses, somme des ordonnees */
-    int nbElem, sum_x, sum_y;
-=======
 	/** Nombre d'elements */
 	int nbElem,
 	/** Somme des abscisses */
 	sum_x,
 	/** Somme des ordonnees */
 	sum_y;
->>>>>>> cfbcd316dc590ef80ca773be71e2cee50122419c
 };
 
 #endif //__BARYCENTRE_H_
