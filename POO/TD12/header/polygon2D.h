@@ -5,10 +5,11 @@
 #include <algorithm>
 #include <iostream>
 #include <bits/stream_iterator.h>
-#include "../header/point2D.h"
+#include "point2D.h"
 #include "_barycentre.h"
 #include "_comparePoint2D.h"
 
+/** Polygone contenant un vecteur de point2D */
 class polygon2D {
 public:
     /** Contructeur, initialise le vecteur de point2D */
@@ -40,7 +41,7 @@ public:
         m_vPoint2D.push_back(p);
     }
 
-    /* Retrait du dernier point2D ajouté au polygon2D */
+    /** Retrait du dernier point2D ajouté au polygon2D */
     void pop() {
         m_vPoint2D.pop_back();
     }

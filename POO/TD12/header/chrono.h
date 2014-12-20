@@ -3,6 +3,7 @@
 
 #include <ctime>
 
+/** Chronometre utile pour calculer le temps d'execution d'une fonction ou d'un programme */
 class chrono {
 public:
     /** Initialise les variables a 0 */
@@ -27,8 +28,10 @@ public:
     }
 
 private:
-    /** Heure de debut / fin du chronometre */
-    int m_begin, m_end;
+    /** Heure de debut */
+    int m_begin,
+	/** Heure de fin */
+	m_end;
 };
 
 #endif //__CHRONO_H_

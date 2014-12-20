@@ -21,7 +21,7 @@ const polygon2D generate(int nb) {
 
 int main() {
     // Creation d'un polygon2D et remplissage avec 5 point2D aleatoires
-    polygon2D poly2D = generate(5);
+    polygon2D poly2D = generate(10);
     cout << "Calcul du barycentre avec foncteur:  " << poly2D.barycentre()
             << "\nCalcul du barycentre avec iterateur: " << poly2D.barycentre_1()
             << endl;
