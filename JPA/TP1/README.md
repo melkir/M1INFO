@@ -1,7 +1,7 @@
 JPABasis
 ========
 
-Gradle + Eclipse + JPA with Eclipse Link and HSQLDB
+Gradle + IntelliJ + JPA with Eclipse Link and HSQLDB
 
 HSQLDB Data base setup :
 - download and uncompress hsqldb from hsqldb.org
