@@ -5,8 +5,9 @@ import org.gnome.gtk.Window;
 
 import java.io.FileNotFoundException;
 import java.text.ParseException;
+import java.util.Observer;
 
-public class GenericView {
+public abstract class GenericView implements Observer {
 
     protected final Builder builder;
     protected final Window mainWindow;

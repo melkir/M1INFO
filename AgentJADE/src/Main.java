@@ -1,6 +1,5 @@
 import controller.PlatformManagerController;
 import model.PlatformManager;
-import org.gnome.gtk.Builder;
 import org.gnome.gtk.Gtk;
 import view.PlatformManagerView;
 
