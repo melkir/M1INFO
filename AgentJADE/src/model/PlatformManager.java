@@ -1,9 +1,9 @@
 package model;
 
-public class PlatformManager {
+public class PlatformManager extends AbstractModel {
     String agentName, resultText;
     boolean isProvider, isSeeker;
-    
+
     public String getAgentName() {
         return agentName;
     }
@@ -36,4 +36,9 @@ public class PlatformManager {
         this.isSeeker = isSeeker;
     }
 
+    public void reset() {
+        this.agentName = "";
+        notifyObserver(this.agentName);
+    }
+    
 }

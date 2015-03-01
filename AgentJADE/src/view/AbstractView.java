@@ -1,18 +1,18 @@
 package view;
 
+import observer.Observer;
 import org.gnome.gtk.Builder;
 import org.gnome.gtk.Window;
 
 import java.io.FileNotFoundException;
 import java.text.ParseException;
-import java.util.Observer;
 
-public abstract class GenericView implements Observer {
+public abstract class AbstractView implements Observer {
 
     protected final Builder builder;
     protected final Window mainWindow;
 
-    public GenericView(String filepath) {
+    public AbstractView(String filepath) {
         this.builder = new Builder();
         try {
             builder.addFromFile(filepath);

@@ -1,41 +1,51 @@
 package view;
 
+import controller.AbstractController;
+import controller.AgentProviderController;
+import controller.AgentSeekerController;
+import model.AbstractModel;
+import model.AgentProvider;
+import model.AgentSeeker;
 import org.gnome.gdk.Event;
 import org.gnome.gtk.*;
 
-import java.util.Observable;
-
-public class PlatformManagerView extends GenericView {
+public class PlatformManagerView extends AbstractView {
     Window mainWindow;
     Entry entryName;
     RadioButton radioProvider, radioSeeker;
     TextView textViewResult;
     Button buttonAdd;
-    
-    // Temporary method
+
+    private AbstractController controller;
+
     Button.Clicked buttonAddListener = new Button.Clicked() {
         @Override
         public void onClicked(Button button) {
-            // Return if entry name is empty
             if (0 == entryName.getTextLength()) return;
-            // Retrieve fields contents
-            String name = "Agent" + (radioProvider.getActive() ? "Provider" : "Seeker") + ' ' + entryName.getText();
-            // Add to the textViewResult the agent created
-            TextBuffer textBuffer = textViewResult.getBuffer();
-            textBuffer.insert(textBuffer.getIterEnd(), name + '\n');
-            // Generate a new view
-            GenericView agentView;
-            // Assign the correct view
-            if (radioProvider.getActive()) agentView = new AgentProviderView();
-            else agentView = new AgentSeekerView();
-            // Change title with the name of the agent
+            System.out.println("Agent created");
+            controller.reset();
+            AbstractModel agentModel;
+            AbstractController agentController;
+            AbstractView agentView;
+            if (radioProvider.getActive()) {
+                agentModel = new AgentProvider();
+                agentController = new AgentProviderController(agentModel);
+                agentView = new AgentProviderView(agentController);
+                agentModel.addObserver(agentView);
+            } else {
+                agentModel = new AgentSeeker();
+                agentController = new AgentSeekerController(agentModel);
+                agentView = new AgentSeekerView(agentController);
+                agentModel.addObserver(agentView);
+            }
             Window w = agentView.getWindow();
-            w.setTitle(name);
+            w.setTitle("Agent" + (radioProvider.getActive() ? "Provider" : "Seeker") + ' ' + entryName.getText());
         }
     };
 
-    public PlatformManagerView() {
+    public PlatformManagerView(AbstractController controller) {
         super("interface/PlatformManager.glade");
+        this.controller = controller;
         initComposant();
     }
 
@@ -46,21 +56,19 @@ public class PlatformManagerView extends GenericView {
         radioSeeker = (RadioButton) builder.getObject("radiobutton_seeker");
         buttonAdd = (Button) builder.getObject("button_add");
         textViewResult = (TextView) builder.getObject("textview_result");
-        
+
+        // buttonAdd.connect(buttonAddListener);
         mainWindow.connect(new CloseListener());
         buttonAdd.connect(buttonAddListener);
-        buttonAdd.connect(new SubmitListener());
     }
 
-    public static class SubmitListener implements Button.Clicked {
-        @Override
-        public void onClicked(Button button) {
-            //TODO
-            System.out.println("Agent created");
-            // fireAgentCreated();
-        }
+    @Override
+    public void update(String str) {
+        String name = "Agent" + (radioProvider.getActive() ? "Provider" : "Seeker") + ' ' + entryName.getText();
+        TextBuffer textBuffer = textViewResult.getBuffer();
+        textBuffer.insert(textBuffer.getIterEnd(), name + '\n');
     }
-    
+
     public static class CloseListener implements Window.DeleteEvent {
         @Override
         public boolean onDeleteEvent(Widget widget, Event event) {
@@ -68,9 +76,5 @@ public class PlatformManagerView extends GenericView {
             return false;
         }
     }
-    
-    @Override
-    public void update(Observable o, Object arg) {
 
-    }
 }

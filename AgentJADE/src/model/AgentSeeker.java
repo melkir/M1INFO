@@ -1,6 +1,6 @@
 package model;
 
-public class AgentSeeker {
+public class AgentSeeker extends AbstractModel {
     // ComboBoxText comboBoxTextGenre;
     String artist, album, minNote, maxPrice, nbMusic, maxBudget;
 
@@ -51,5 +51,17 @@ public class AgentSeeker {
     public void setMaxBudget(String maxBudget) {
         this.maxBudget = maxBudget;
     }
-    
+
+    public void reset() {
+        this.artist = "";
+        this.album = "";
+        this.maxPrice = "";
+        this.nbMusic = "";
+        this.maxBudget = "";
+        notifyObserver(artist);
+        notifyObserver(album);
+        notifyObserver(maxPrice);
+        notifyObserver(nbMusic);
+        notifyObserver(maxBudget);
+    }
 }

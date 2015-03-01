@@ -1,14 +1,11 @@
 package controller;
 
-import model.AgentSeeker;
-import view.AgentSeekerView;
+import model.AbstractModel;
 
-public class AgentSeekerController {
-    private AgentSeeker model;
-    private AgentSeekerView view;
-    
-    public AgentSeekerController(AgentSeeker model, AgentSeekerView view) {
-        this.model = model;
-        this.view = view;
+public class AgentSeekerController extends AbstractController {
+
+    public AgentSeekerController(AbstractModel model) {
+        super(model);
     }
+
 }

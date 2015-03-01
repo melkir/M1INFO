@@ -1,11 +1,13 @@
 package view;
 
+import controller.AbstractController;
 import org.gnome.gdk.Event;
-import org.gnome.gtk.*;
+import org.gnome.gtk.Button;
+import org.gnome.gtk.Entry;
+import org.gnome.gtk.Widget;
+import org.gnome.gtk.Window;
 
-import java.util.Observable;
-
-public class AgentSeekerView extends GenericView {
+public class AgentSeekerView extends AbstractView {
 
     // ComboBoxText comboBoxTextGenre;
     // RadioGroup radioGroupNote;
@@ -13,8 +15,11 @@ public class AgentSeekerView extends GenericView {
     Entry entryArtist, entryAlbum, entryMaxPrice, entryNbMusic, entryMaxBudget;
     Button buttonSubmit;
 
-    public AgentSeekerView() {
+    private AbstractController controller;
+
+    public AgentSeekerView(AbstractController controller) {
         super("interface/AgentSeeker.glade");
+        this.controller = controller;
         initComposant();
     }
 
@@ -28,22 +33,22 @@ public class AgentSeekerView extends GenericView {
         entryNbMusic = (Entry) builder.getObject("entry_nbMusic");
         entryMaxBudget = (Entry) builder.getObject("entry_budget");
         buttonSubmit = (Button) builder.getObject("button_submit");
-        
+
         mainWindow.connect(new CloseListener());
+    }
+
+    @Override
+    public void update(String str) {
+
     }
 
     public static class CloseListener implements Window.DeleteEvent {
         @Override
         public boolean onDeleteEvent(Widget widget, Event event) {
             //TODO
-            System.out.println("Agent deleted");
             // fireAgentDeleted()
+            System.out.println("Agent deleted");
             return false;
         }
-    }
-    
-    @Override
-    public void update(Observable o, Object arg) {
-
     }
 }

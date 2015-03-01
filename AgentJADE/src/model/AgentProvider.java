@@ -1,8 +1,8 @@
 package model;
 
-public class AgentProvider {
+public class AgentProvider extends AbstractModel {
     // ComboBoxText comboBoxTextGenre;
-     String artist, name, price, note, musicAvailableList, musicSoldList, searchMusic;
+    String artist, name, price, note, musicAvailableList, musicSoldList, searchMusic;
 
     public String getSearchMusic() {
         return searchMusic;
@@ -59,5 +59,11 @@ public class AgentProvider {
     public void setMusicSoldList(String musicSoldList) {
         this.musicSoldList = musicSoldList;
     }
-    
+
+    public void reset() {
+        this.artist = "";
+        this.name = "";
+        this.price = "";
+        this.note = "";
+    }
 }

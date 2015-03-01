@@ -1,14 +1,11 @@
 package controller;
 
-import model.AgentProvider;
-import view.AgentProviderView;
+import model.AbstractModel;
 
-public class AgentProviderController {
-    private AgentProvider model;
-    private AgentProviderView view;
+public class AgentProviderController extends AbstractController {
 
-    public AgentProviderController(AgentProvider model, AgentProviderView view) {
-        this.model = model;
-        this.view = view;
+    public AgentProviderController(AbstractModel model) {
+        super(model);
     }
+
 }

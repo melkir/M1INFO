@@ -1,14 +1,11 @@
 package controller;
 
-import model.PlatformManager;
-import view.PlatformManagerView;
+import model.AbstractModel;
 
-public class PlatformManagerController {
-    private PlatformManager model;
-    private PlatformManagerView view;
-    
-    public PlatformManagerController(PlatformManager model, PlatformManagerView view) {
-        this.model = model;
-        this.view = view;
+public class PlatformManagerController extends AbstractController {
+
+    public PlatformManagerController(AbstractModel model) {
+        super(model);
     }
+
 }

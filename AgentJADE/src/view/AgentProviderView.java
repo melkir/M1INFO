@@ -1,11 +1,10 @@
 package view;
 
+import controller.AbstractController;
 import org.gnome.gdk.Event;
 import org.gnome.gtk.*;
 
-import java.util.Observable;
-
-public class AgentProviderView extends GenericView {
+public class AgentProviderView extends AbstractView {
     // ComboBoxText comboBoxTextGenre;
     // RadioGroup radioGroupNote;
     Window mainWindow;
@@ -13,8 +12,11 @@ public class AgentProviderView extends GenericView {
     TextView textViewMusicAvailable, textViewMusicSold;
     Button buttonAdd;
 
-    public AgentProviderView() {
+    private AbstractController controller;
+
+    public AgentProviderView(AbstractController controller) {
         super("interface/AgentProvider.glade");
+        this.controller = controller;
         initComposant();
     }
 
@@ -29,22 +31,22 @@ public class AgentProviderView extends GenericView {
         entryPrice = (Entry) builder.getObject("entry_price");
         buttonAdd = (Button) builder.getObject("add_music");
         textViewMusicSold = (TextView) builder.getObject("music_sold");
-        
+
         mainWindow.connect(new CloseListener());
+    }
+
+    @Override
+    public void update(String str) {
+
     }
 
     public static class CloseListener implements Window.DeleteEvent {
         @Override
         public boolean onDeleteEvent(Widget widget, Event event) {
             //TODO
-            System.out.println("Agent deleted");
             // fireAgentDeleted()
+            System.out.println("Agent deleted");
             return false;
         }
-    }
-    
-    @Override
-    public void update(Observable o, Object arg) {
-
     }
 }
