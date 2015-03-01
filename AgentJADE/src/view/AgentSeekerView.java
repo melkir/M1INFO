@@ -9,8 +9,8 @@ public class AgentSeekerView extends GenericView {
     Entry entryArtist, entryAlbum, entryMaxPrice, entryNbMusic, entryMaxBudget;
     Button buttonSubmit;
 
-    public AgentSeekerView(Builder builder) {
-        super(builder, "interface/AgentSeeker.glade");
+    public AgentSeekerView() {
+        super("interface/AgentSeeker.glade");
         initComposant();
     }
 

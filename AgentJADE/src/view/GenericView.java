@@ -11,8 +11,8 @@ public class GenericView {
     protected final Builder builder;
     protected final Window mainWindow;
 
-    public GenericView(Builder builder, String filepath) {
-        this.builder = builder;
+    public GenericView(String filepath) {
+        this.builder = new Builder();
         try {
             builder.addFromFile(filepath);
         } catch (FileNotFoundException e) {

@@ -9,8 +9,8 @@ public class AgentProviderView extends GenericView {
     TextView textViewMusicAvailable, textViewMusicSold;
     Button buttonAdd;
 
-    public AgentProviderView(Builder builder) {
-        super(builder, "interface/AgentProvider.glade");
+    public AgentProviderView() {
+        super("interface/AgentProvider.glade");
         initComposant();
     }
 

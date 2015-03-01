@@ -8,10 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
         Gtk.init(args);
-        final Builder builder = new Builder();
         PlatformManagerController pmc;
-        pmc = new PlatformManagerController(new PlatformManager(), new PlatformManagerView(builder));
-        // PlatformManagerView pmView = new PlatformManagerView(builder);
+        pmc = new PlatformManagerController(new PlatformManager(), new PlatformManagerView());
         Gtk.main();
     }
 }

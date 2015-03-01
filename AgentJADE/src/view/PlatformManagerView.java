@@ -22,16 +22,16 @@ public class PlatformManagerView extends GenericView {
             // Generate a new view
             GenericView agentView;
             // Assign the correct view
-            if (radioProvider.getActive()) agentView = new AgentProviderView(builder);
-            else agentView = new AgentSeekerView(builder);
+            if (radioProvider.getActive()) agentView = new AgentProviderView();
+            else agentView = new AgentSeekerView();
             // Change title with the name of the agent
             Window w = agentView.getWindow();
             w.setTitle(name);
         }
     };
 
-    public PlatformManagerView(Builder builder) {
-        super(builder, "interface/PlatformManager.glade");
+    public PlatformManagerView() {
+        super("interface/PlatformManager.glade");
         mainWindow.connect(new Window.DeleteEvent() {
             @Override
             public boolean onDeleteEvent(Widget widget, Event event) {
