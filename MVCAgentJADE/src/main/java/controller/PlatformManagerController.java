@@ -4,6 +4,7 @@ import model.AgentProvider;
 import model.AgentSeeker;
 import model.PlatformManager;
 import org.gnome.gtk.Button;
+import org.gnome.gtk.Entry;
 import view.AgentProviderView;
 import view.AgentSeekerView;
 import view.PlatformManagerView;
@@ -19,6 +20,36 @@ public class PlatformManagerController {
         this.view = view;
         this.model = model;
         this.view.addButtonAddClickedListener(new ButtonAddClickedListener());
+        this.view.addEntryActivateListener(new EntryNameActivateListener());
+    }
+
+    private void createAgent() {
+        String agentName, agentType;
+        try {
+            // Retrieve field content
+            agentName = view.getAgentName();
+            agentType = view.getAgentType();
+            // Insert agent information into model
+            model.addAgent(agentName, agentType);
+            // Update the view to add the agent
+            view.addAgentToView(model.getAgentInfo());
+            // Show the agent corresponding view
+            if (agentType.equals("provider")) {
+                AgentProviderView providerView = new AgentProviderView();
+                new ProviderController(new AgentProvider(view.getAgentName()), providerView);
+                providerView.setVisible(true);
+                providerView.setTitle("Agent " + agentType + " " + agentName);
+            } else if (agentType.equals("seeker")) {
+                AgentSeekerView seekerView = new AgentSeekerView();
+                new SeekerController(new AgentSeeker(view.getAgentName()), seekerView);
+                seekerView.setTitle("Agent " + agentType + " " + agentName);
+                seekerView.setVisible(true);
+            } else System.out.println("unknown");
+
+        } catch (NullPointerException ex) {
+            // Show error message if name field is empty
+            view.displayErrorMessage("You need to enter the agent name");
+        }
     }
 
     /**
@@ -27,30 +58,14 @@ public class PlatformManagerController {
     private class ButtonAddClickedListener implements Button.Clicked {
         @Override
         public void onClicked(Button button) {
-            String agentName, agentType;
-            try {
-                // Retrieve field content
-                agentName = view.getAgentName();
-                agentType = view.getAgentType();
-                // Insert agent information into model
-                model.addAgent(agentName, agentType);
-                // Update the view to add the agent
-                view.addAgentToView(model.getAgentInfo());
-                // Show the agent corresponding view
-                if (agentType.equals("provider")) {
-                    AgentProviderView providerView = new AgentProviderView();
-                    new ProviderController(new AgentProvider(view.getAgentName()), providerView);
-                    providerView.setVisible(true);
-                } else if (agentType.equals("seeker")) {
-                    AgentSeekerView seekerView = new AgentSeekerView();
-                    new SeekerController(new AgentSeeker(view.getAgentName()), seekerView);
-                    seekerView.setVisible(true);
-                } else System.out.println("unknown");
+            createAgent();
+        }
+    }
 
-            } catch (NullPointerException ex) {
-                // Show error message if name field is empty
-                view.displayErrorMessage("You need to enter the agent name");
-            }
+    private class EntryNameActivateListener implements Entry.Activate {
+        @Override
+        public void onActivate(Entry entry) {
+            createAgent();
         }
     }
 }

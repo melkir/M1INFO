@@ -13,7 +13,7 @@ public class AgentSeekerView extends AbstractView {
     // ComboBoxText comboBoxTextGenre;
     // RadioGroup radioGroupNote;
     Window mainWindow;
-    Entry entryArtist, entryAlbum, entryMaxPrice, entryNbMusic, entryMaxBudget;
+    Entry entryArtist, entryAlbum, entryName, entryMaxPrice, entryNbMusic, entryMaxBudget;
     Button buttonSubmit;
 
     public AgentSeekerView() {
@@ -26,10 +26,15 @@ public class AgentSeekerView extends AbstractView {
         mainWindow = (Window) builder.getObject("mainWindow");
         entryArtist = (Entry) builder.getObject("entry_artist");
         entryAlbum = (Entry) builder.getObject("entry_album");
+        entryName = (Entry) builder.getObject("entry_name");
         entryMaxPrice = (Entry) builder.getObject("entry_maxPrice");
         entryNbMusic = (Entry) builder.getObject("entry_nbMusic");
         entryMaxBudget = (Entry) builder.getObject("entry_budget");
         buttonSubmit = (Button) builder.getObject("button_submit");
+    }
+
+    public void setTitle(String title) {
+        mainWindow.setTitle(title);
     }
 
     @Override

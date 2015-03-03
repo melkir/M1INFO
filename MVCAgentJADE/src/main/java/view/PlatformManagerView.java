@@ -54,6 +54,10 @@ public class PlatformManagerView extends AbstractView {
         textBuffer.insert(textBuffer.getIterEnd(), agent + '\n');
     }
 
+    public void addEntryActivateListener(Entry.Activate listener) {
+        entryName.connect(listener);
+    }
+
     public void addButtonAddClickedListener(Clicked listener) {
         buttonAdd.connect(listener);
     }
